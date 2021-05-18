@@ -31,11 +31,16 @@
 		<Compiler>
 			<Add option="-Wall" />
 		</Compiler>
+		<Unit filename="LeitorSeq.cpp" />
+		<Unit filename="LeitorSeq.h" />
 		<Unit filename="Lista.cpp" />
 		<Unit filename="Lista.h" />
 		<Unit filename="Menu.cpp" />
 		<Unit filename="Menu.h" />
+		<Unit filename="MenuSeq.cpp" />
+		<Unit filename="MenuSeq.h" />
 		<Unit filename="Node.h" />
+		<Unit filename="NodeSeq.h" />
 		<Unit filename="leitorDeArquivos.cpp" />
 		<Unit filename="leitorDeArquivos.h" />
 		<Unit filename="main.cpp" />
