@@ -5,6 +5,29 @@
 #include "MenuSeq.h"
 #include "LeitorSeq.h"
 
+void bubbleSort(NodeSeq myVector[], int listLength, int *c, int *m)
+{
+    if (listLength < 1)
+        return;
+
+    for (int i = 0; i < listLength; i++)
+    {
+        if (myVector[i].rg > myVector[i+1].rg)
+        {
+            int auxRG = myVector[i].rg;
+            string auxName = myVector[i].name;
+            myVector[i].rg = myVector[i+1].rg;
+            myVector[i].name = myVector[i+1].name;
+            myVector[i+1].rg = auxRG;
+            myVector[i+1].name = auxName;
+            *c += 1;
+            *m += 3;
+        }
+    }
+    *m += 1;
+    bubbleSort(myVector, listLength - 1, c, m);
+}
+
 void quicksort (NodeSeq myVector[], int inicial, int listLength, int *c, int *m)
 {
     int i, j, pivo, auxRG;
@@ -299,7 +322,8 @@ int main()
                 break;
             }
             case 11:{
-
+                clockStarted = clock();
+                bubbleSort(myVector, listLength, &comparisons, &moves);
                 break;
             }
             case 12:{
