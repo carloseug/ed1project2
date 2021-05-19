@@ -39,17 +39,23 @@ int Menu::showFirstMenu()
 
 void Menu::showSecondMenu()
 {
-    cout << "Opcoes:" <<
-    endl << "1 - Inserir usuario no fim da lista" <<
-    endl << "2 - Inserir usuario no inicio da lista" <<
-    endl << "3 - Inserir usuario numa posicao K da lista" <<
-    endl << "4 - Remover o Primeiro usuario" <<
-    endl << "5 - Remover um usuario K" <<
-    endl << "6 - Remover o Ultimo usuario" <<
-    endl << "7 - Buscar na Lista" <<
-    endl << "8 - Mostrar a lista" <<
-    endl << "9 - Salvar (arquivo separado)" <<
-    endl << "10 - Sair" << endl <<
+    cout << "0pcoes:" <<
+    endl << "01 - Inserir usuario no fim da lista" <<
+    endl << "02 - Inserir usuario no inicio da lista" <<
+    endl << "03 - Inserir usuario numa posicao K da lista" <<
+    endl << "04 - Remover o Primeiro usuario" <<
+    endl << "05 - Remover um usuario K" <<
+    endl << "06 - Remover o Ultimo usuario" <<
+    endl << "07 - Buscar na Lista" <<
+    endl << "08 - Selection-Sort" <<
+    endl << "09 - Insertion-Sort" <<
+    endl << "10 - Bubble-Sort" <<
+    endl << "11 - Shell-Sort" <<
+    endl << "12 - Quick-Sort" <<
+    endl << "13 - Merge-Sort" <<
+    endl << "14 - Mostrar a lista" <<
+    endl << "15 - Salvar (arquivo separado)" <<
+    endl << "16 - Sair" << endl <<
     endl << "Escolha uma das opcoes acima: ";
 }
 
@@ -138,7 +144,7 @@ void Menu::loopingMenu(int userOption, Lista* myList, int* c, int* m,
 {
     switch (userOption){
 
-        case 1:{
+        case 01:{
             string newName = getNewName();
             int newRg = getNewRg();
 
@@ -154,7 +160,7 @@ void Menu::loopingMenu(int userOption, Lista* myList, int* c, int* m,
 
             break;
         }
-        case 2:{
+        case 02:{
             string newName = getNewName();
             int newRg = getNewRg();
 
@@ -169,7 +175,7 @@ void Menu::loopingMenu(int userOption, Lista* myList, int* c, int* m,
 
             break;
         }
-        case 3:{
+        case 03:{
             string newName = getNewName();
             int newRg = getNewRg();
             double i, positionK = getPosition();
@@ -194,7 +200,7 @@ void Menu::loopingMenu(int userOption, Lista* myList, int* c, int* m,
 
             break;
         }
-        case 4:{
+        case 04:{
             setRemoved(myList->pointerToFirst->name, myList->pointerToFirst->rg);
             clockStarted = clock();
             myList->removeFirstNode();
@@ -206,7 +212,7 @@ void Menu::loopingMenu(int userOption, Lista* myList, int* c, int* m,
 
             break;
         }
-        case 5:{
+        case 05:{
             double userBeingRemoved = getPosition();
             cout << endl << "-> Removendo da lista: ";
 
@@ -221,7 +227,7 @@ void Menu::loopingMenu(int userOption, Lista* myList, int* c, int* m,
 
             break;
         }
-        case 6:{
+        case 06:{
             cout << endl << "-> Removendo da lista:";
 
             myList->showInfo(myList->listLength());
@@ -233,7 +239,7 @@ void Menu::loopingMenu(int userOption, Lista* myList, int* c, int* m,
             *m = (myList->listLength() - 1) + 3;
             break;
         }
-        case 7:{
+        case 07:{
             int searchRg = getNewRg();
 
             clockStarted = clock();
@@ -254,7 +260,31 @@ void Menu::loopingMenu(int userOption, Lista* myList, int* c, int* m,
             break;
 
         }
-        case 8:{
+        case  8:{
+
+            break;
+        }
+        case  9:{
+
+            break;
+        }
+        case 10:{
+
+            break;
+        }
+        case 11:{
+
+            break;
+        }
+        case 12:{
+
+            break;
+        }
+        case 13:{
+
+            break;
+        }
+        case 14:{
             clockStarted = clock();
             myList->showListInfo();
             clockFinished = clock();
@@ -264,7 +294,7 @@ void Menu::loopingMenu(int userOption, Lista* myList, int* c, int* m,
 
             break;
         }
-        case 9:{
+        case 15:{
             clockStarted = clock();
             myList->saveList();
             clockFinished = clock();
@@ -274,7 +304,7 @@ void Menu::loopingMenu(int userOption, Lista* myList, int* c, int* m,
 
             break;
         }
-        case 10:{
+        case 16:{
             exit (0);
         }
         default:{

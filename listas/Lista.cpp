@@ -138,3 +138,18 @@ void Lista::saveList()
     }
     else cout << "Unable to open file";
 }
+
+void Lista::selectionSort()
+{
+   /* for (int i = 0; i < tam; ++indice) {
+        int indiceMenor = indice;
+        for (int indiceSeguinte = indice+1; indiceSeguinte < tam; ++indiceSeguinte) {
+            if (vetor[indiceSeguinte] < vetor[indiceMenor]) {
+                indiceMenor = indiceSeguinte;
+            }
+        }
+        int aux = vetor[indice];
+        vetor[indice] = vetor[indiceMenor];
+        vetor[indiceMenor] = aux;
+    }*/
+}

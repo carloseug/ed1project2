@@ -24,16 +24,23 @@ int MenuSeq::showFirstMenu()
 void MenuSeq::showSecondMenu()
 {
     cout << "0pcoes:" <<
-    endl << "1 - Inserir usuario no fim da lista" <<
-    endl << "2 - Inserir usuario no inicio da lista" <<
-    endl << "3 - Inserir usuario numa posicao K da lista" <<
-    endl << "4 - Remover o Primeiro usuario" <<
-    endl << "5 - Remover um usuario K" <<
-    endl << "6 - Remover o Ultimo usuario" <<
-    endl << "7 - Buscar na Lista" <<
-    endl << "8 - Mostrar a lista" <<
-    endl << "9 - Salvar (arquivo separado)" <<
-    endl << "10 - Sair" << endl <<
+    endl << "01 - Inserir usuario no fim da lista" <<
+    endl << "02 - Inserir usuario no inicio da lista" <<
+    endl << "03 - Inserir usuario numa posicao K da lista" <<
+    endl << "04 - Remover o Primeiro usuario" <<
+    endl << "05 - Remover um usuario K" <<
+    endl << "06 - Remover o Ultimo usuario" <<
+    endl << "07 - Busca linear" <<
+    endl << "08 - Busca binaria" <<
+    endl << "09 - Selection-Sort" <<
+    endl << "10 - Insertion-Sort" <<
+    endl << "11 - Bubble-Sort" <<
+    endl << "12 - Shell-Sort" <<
+    endl << "13 - Quick-Sort" <<
+    endl << "14 - Merge-Sort" <<
+    endl << "15 - Mostrar a lista" <<
+    endl << "16 - Salvar (arquivo separado)" <<
+    endl << "17 - Sair" << endl <<
     endl << "Escolha uma das opcoes acima: ";
 }
 

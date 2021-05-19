@@ -203,7 +203,7 @@
 1613065235 c:\users\carlo\documents\github\ed1project2\listas\leitordearquivos.h
 	"Lista.h"
 
-1613065235 c:\users\carlo\documents\github\ed1project2\listas\lista.h
+1621431826 c:\users\carlo\documents\github\ed1project2\listas\lista.h
 	"Node.h"
 
 1612788595 c:\users\carlo\documents\github\ed1project2\listas\node.h
@@ -233,10 +233,10 @@
 	<iomanip>
 	<locale.h>
 
-1618923873 source:c:\users\carlo\documents\github\ed1project2\listas\lista.cpp
+1621433121 source:c:\users\carlo\documents\github\ed1project2\listas\lista.cpp
 	"Lista.h"
 
-1621350329 source:c:\users\carlo\documents\github\ed1project2\listas\main.cpp
+1621433564 source:c:\users\carlo\documents\github\ed1project2\listas\main.cpp
 	"Lista.h"
 	"Menu.h"
 	"leitorDeArquivos.h"
@@ -250,9 +250,9 @@
 1621346911 c:\users\carlo\documents\github\ed1project2\listas\menuseq.h
 	"NodeSeq.h"
 
-1613064642 source:c:\users\carlo\documents\github\ed1project2\listas\menu.cpp
+1621433111 source:c:\users\carlo\documents\github\ed1project2\listas\menu.cpp
 	"Menu.h"
 
-1621346911 source:c:\users\carlo\documents\github\ed1project2\listas\menuseq.cpp
+1621436737 source:c:\users\carlo\documents\github\ed1project2\listas\menuseq.cpp
 	"MenuSeq.h"
 

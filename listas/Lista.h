@@ -19,7 +19,13 @@ public:
     void removeLastNode ();
     void updatePositions ();
     int listLength ();
-    void saveList();
+    void saveList ();
+    void selectionSort ();
+    void insertionSort ();
+    void bubbleSort ();
+    void shellSort ();
+    void quickSort ();
+    void mergeSort ();
 
 };
 

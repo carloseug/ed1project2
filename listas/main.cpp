@@ -5,6 +5,47 @@
 #include "MenuSeq.h"
 #include "LeitorSeq.h"
 
+void quicksort (NodeSeq myVector[], int inicial, int listLength, int *c, int *m)
+{
+    int i, j, pivo, auxRG;
+    string auxName;
+    i = inicial;
+    j = listLength-1;
+    pivo = myVector[(inicial + listLength) / 2].rg;
+    *m += 8;
+    while(i <= j)
+    {
+        while(myVector[i].rg < pivo && i < listLength)
+        {
+            i++;
+            *c += 1;
+        }
+        while(myVector[j].rg > pivo && j > inicial)
+        {
+            j--;
+            *c += 1;
+        }
+        if(i <= j)
+        {
+            auxRG = myVector[i].rg;
+            auxName = myVector[i].name;
+            myVector[i].rg = myVector[j].rg;
+            myVector[i].name = myVector[j].name;
+            myVector[j].rg = auxRG;
+            myVector[j].name = auxName;
+            i++;
+            j--;
+            *c += 1;
+            *m += 3;
+        }
+        *c += 1;
+    }
+    if(j > inicial)
+        quicksort(myVector, inicial, j+1, c, m);
+    if(i < listLength)
+        quicksort(myVector, i, listLength, c, m);
+}
+
 int main()
 {
     int listType;
@@ -188,6 +229,129 @@ int main()
             }
             case 8:{
                 clockStarted = clock();
+                int inf =0, sup = listLength - 1, searchRg = myMenu.getNewRg(), flag = 0, meio;
+
+                while (inf <= sup)
+                {
+                    meio = (inf + sup)/2;
+                    moves += 1;
+                    if (searchRg == myVector[meio].rg)
+                    {
+                        cout << "Pos: " << meio+1 << " Nome: " << myVector[meio].name << " Rg: " << myVector[meio].rg << endl;
+                        flag = 1;
+                        break;
+                    }
+                    if (searchRg < myVector[meio].rg){
+                        sup = meio-1;
+                        moves += 1;
+                    }
+
+                    else{
+                        inf = meio+1;
+                        moves += 1;
+                    }
+
+
+                    comparisons += 4;
+                }
+
+                if(flag == 0)
+                    cout << "Nao encontrado" << endl;
+                break;
+            }
+            case 9:{
+                for (int i = 0; i < listLength; i++) {
+                    int indiceMenor = i;
+                    for (int indiceSeguinte = i+1; indiceSeguinte < listLength; indiceSeguinte++) {
+                        comparisons += 1;
+                        if (myVector[indiceSeguinte].rg < myVector[indiceMenor].rg) {
+                            indiceMenor = indiceSeguinte;
+                        }
+                    }
+                    int auxRg = myVector[i].rg;
+                    string auxName = myVector[i].name;
+                    myVector[i].rg = myVector[indiceMenor].rg;
+                    myVector[i].name = myVector[indiceMenor].name;
+                    myVector[indiceMenor].rg = auxRg;
+                    myVector[indiceMenor].name = auxName;
+                    moves += 3;
+                    //cout << ".";
+                }
+                cout << "Reordenado via selection-sort com sucesso!" << endl;
+                break;
+            }
+            case 10:{
+                for (int i = 1; i < listLength; i++) {
+                    int escolhido = myVector[i].rg;
+                    string escolhidoName = myVector[i].name;
+                    int j = i - 1;
+
+                    while ((j >= 0) && (myVector[j].rg > escolhido)) {
+                        myVector[j + 1].rg = myVector[j].rg;
+                        myVector[j + 1].name = myVector[j].name;
+                        j--;
+                    }
+
+                    myVector[j + 1].rg = escolhido;
+                    myVector[j + 1].name = escolhidoName;
+                }
+                cout << "Reordenado via insertion-sort com sucesso!" << endl;
+                break;
+            }
+            case 11:{
+
+                break;
+            }
+            case 12:{
+                clockStarted = clock();
+                int h = 1, rep = 0, i, j;
+
+                while (h < listLength) {
+                   h = h*3+1;
+                   comparisons += 1;
+                   moves += 1;
+                }
+
+                while (h > 1) {
+                    h /= 3;
+                    comparisons += 1;
+
+                    for (i = h; i < listLength; i++) {
+                        int auxRG = myVector[i].rg;
+                        string auxName = myVector[i].name;
+                        j = i;
+                        moves += 2;
+
+                        while (j >= h && auxRG < myVector[j-h].rg) {
+                            myVector[j].rg = myVector[j-h].rg;
+                            myVector[j].name = myVector[j-h].name;
+                            j -= h;
+                            rep++;
+                            comparisons += 1;
+                            moves += 2;
+                        }
+
+                        myVector[j].rg = auxRG;
+                        myVector[j].name = auxName;
+                        comparisons += 1;
+                        moves += 1;
+
+                    }
+                }
+                break;
+            }
+            case 13:{
+                clockStarted = clock();
+                quicksort(myVector,0,listLength, &comparisons, &moves);
+
+                break;
+            }
+            case 14:{
+
+                break;
+            }
+            case 15:{
+                clockStarted = clock();
                 for(int i = 0; i < listLength; i++)
                 {
                     cout << i+1 << " " << myVector[i].name << " " << myVector[i].rg << endl;
@@ -196,7 +360,7 @@ int main()
 
                 break;
             }
-            case 9:{
+            case 16:{
                 clockStarted = clock();
                 ofstream savingFile ("NomeRGSave.txt");
 
@@ -214,7 +378,7 @@ int main()
                 else cout << "Unable to open file";
                 break;
             }
-            case 10:{
+            case 17:{
                 free(myVector);
                 exit (0);
             }
